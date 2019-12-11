@@ -6,12 +6,51 @@
   font-size: .9rem;
 }
 
+.drawer-box {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+
+.drawer-content {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  position: relative;
+  top: 80%;
+}
+
+.drawer-sticker {
+  display: flex; 
+}
+
+.drawer-title, .drawer-total {
+  color: var(--huge-grey);
+  font-size: 1rem;
+  transition: all 250ms;
+}
+
+.drawer-total {
+  margin-left: 10px;
+}
+
+.drawer-handle {
+  background: var(--huge-white);
+  box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+  height: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 50px);
+  width: 100px;
+} 
+
 .wrapper {
+  background: var(--huge-black);
   display: grid;
   height: 85vh;
   grid-template-rows: 25% 25% 25% 25%;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: .5rem;
   grid-template-areas:
   "box1 box2 box3 box4"
   "box5 box6 box7 box8"
@@ -23,7 +62,7 @@
 
 .wrapper .grid-box {
   animation: fadeIn 300ms ease-in normal backwards;
-  background: #eee;
+  background: var(--huge-grey-dark2);
   font-size: 5rem;
   color: white;
   font-family: sans-serif;
@@ -39,6 +78,12 @@
   0 13px 15px rgba(0,0,0,0.4);
   position: relative;
   z-index: 2;
+  transform: translate3d(0, 20px, 100px);
+}
+
+.wrapper .grid-box:hover .drawer-content .drawer-title,
+.wrapper .grid-box:hover .drawer-content .drawer-total {
+  color: var(--huge-white);
 }
 
 .wrapper .el1 { grid-area: box1; animation-delay: 100ms;}
