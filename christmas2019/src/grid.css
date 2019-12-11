@@ -1,0 +1,61 @@
+.grid {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: .9rem;
+}
+
+.wrapper {
+  display: grid;
+  height: 85vh;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: .5rem;
+  grid-template-areas:
+  "box1 box2 box3 box4"
+  "box5 box6 box7 box8"
+  "box9 box10 box11 box12"
+  "box13 box13 box13 box13";
+  margin: 2vh auto 2vh auto;
+  width: 85vw;
+}
+
+.wrapper .grid-box {
+  animation: fadeIn 300ms ease-in normal backwards;
+  background: #eee;
+  font-size: 5rem;
+  color: white;
+  font-family: sans-serif;
+  box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.12), 
+  0 1px 5px rgba(0,0,0,0.24);
+  transition: all 250ms;
+  text-align: center;
+  
+}
+
+.wrapper .grid-box:hover {
+  box-shadow:0 1.5rem 2rem rgba(0,0,0,0.3), 
+  0 13px 15px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper .el1 { grid-area: box1; animation-delay: 100ms;}
+.wrapper .el2 { grid-area: box2; animation-delay: 150ms;}
+.wrapper .el3 { grid-area: box3; animation-delay: 200ms;}
+.wrapper .el4 { grid-area: box4; animation-delay: 250ms;}
+.wrapper .el5 { grid-area: box5; animation-delay: 300ms;}
+.wrapper .el6 { grid-area: box6; animation-delay: 350ms;}
+.wrapper .el7 { grid-area: box7; animation-delay: 400ms;}
+.wrapper .el8 { grid-area: box8; animation-delay: 450ms;}
+.wrapper .el9 { grid-area: box9; animation-delay: 500ms;}
+.wrapper .el10 { grid-area: box10; animation-delay: 550ms;}
+.wrapper .el11 { grid-area: box11; animation-delay: 600ms;}
+.wrapper .el12 { grid-area: box12; animation-delay: 650ms;}
+.wrapper .el13 { grid-area: box13; animation-delay: 700ms;}
+
+@keyframes fadeIn {
+  from { transform: scale(0);}
+  to { transform: scale(1);}
+}

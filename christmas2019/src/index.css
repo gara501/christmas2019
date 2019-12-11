@@ -1,13 +1,375 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+:root {
+  --huge-black: #000;
+  --huge-grey: #808080;
+  --huge-grey-dark: #232525;
+  --huge-magenta: #ec008c;
+  --huge-white: #fff;
+  --huge-blue: #2fbbf9;
+  --huge-bg-modal: rgba(0,0,0,0.4);
+  --huge-bg-modal-white: rgba(255,255,255,.85);
+}
+/*
+
+*/
+body {
+  background: var(--huge-white);
+  font-family: "HUGEAvantGarde", Georgia;
+  letter-spacing: -.01719rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 8rem;
+}
+h2 {
+  font-size: 5rem;
+}
+h3 {
+  font-size: 4rem;
+}
+h4 {
+  font-size: 3rem;
+}
+h5 {
+  font-size: 3.5rem;
+}
+h6 {
+  font-size: 2.5rem;
+}
+p {
+  font-size: 2rem;
+}
+
+h1,h2,h3,h4,h5,h6, p {
+  color: var(--huge-black);
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.menu {
+  margin: 80px 0 0;
+  text-align: center;
+}
+
+.separator {
+  background: black;
+  bottom: 0;
+  height: 50px;
+  left: 50%;
+  margin-top: 20px;
+  position: relative;
+  width: 1px;
+}
+
+.linktosantas {
+  margin-top: 60px;
+}
+
+.title {
+  letter-spacing: -.3125rem;
+  padding: 20px 0;
+  text-rendering: optimizeLegibility;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+.h-logo {
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1),background-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 200;
+}
+
+.h-logo--wink {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: none;
+  height: 148px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 0 0;
+  transform: scale(0.405);
+  width: 148px;
+  z-index: 1;
+}
+
+.h-logo__svg {
+  fill: var(--huge-magenta);
+  height: 28px;
+  width: 20px;
+}
+
+.footer {
+  align-content: center;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin: 100px 0 0;
+  text-align: center;
+}
+
+.bigh {
+  background: red;
+}
+
+.santa-random {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 500px;
+  animation: pulse 1s infinite, bounceInDown 2s;
+  transition: all .3s linear;
+}
+
+.santa-random:hover {
+  transform: scale(1.1);
+}
+
+.form-container  {
+  background: var(--huge-bg-modal-white);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  transform: scale(0);
+  transition: .2s all ease-in;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: none;
+}
+
+.purpose-data {
+  background: var(--huge-bg-modal-white);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  display: none;
+  position: fixed;
+  transition: .2s all ease-in;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.form-container.visible {
+  display: block;
+  transform: scale(1);
+}
+
+.purpose-data.visible {
+  display: block;
+}
+
+.form-wrapper {
+  background: var(--huge-white);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: 30%;
+  width: 50%;
+}
+
+.purpose-data-container {
+  background: var(--huge-white);
+  border-radius: 10px;
+  height: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: 10%;
+  width: 80%;
+}
+
+.purpose-data .close,
+.form-container .close {  
+  color: var(--huge-black);
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  transition: .2s all linear;
+  top: 20px;
+}
+
+.purpose-data-container .close:hover {
+  color: var(--huge-magenta);
+}
+
+.purpose-data p {
+  padding: 10px 0;
+}
+.purpose-data .purpose-office {
+  color: var(--huge-grey);
+  font-size: 1.2rem;
+}
+
+.purpose-data .purpose-text {
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.purpose-data .purpose-name {
+  color: var(--huge-magenta);
+  font-size: 1rem;
+}
+
+.word {
+  background: var(--huge-black);
+  padding-top: 100px;
+}
+
+.word .wrapper {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.submenu {
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.purpose {
+  margin: 0 0 50px 0;
+}
+
+.seesantas {
+  color: var(--huge-black);
+  font-family: "Copernicus", serif;
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.button {
+  color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial,sans-serif;
+  font-weight: bold;
+  padding: 0 20px;
+	text-align: center;
+	text-decoration: none !important;
+	-webkit-transition: background-color 0.3s,opacity 0.3s;
+	-moz-transition: background-color 0.3s,opacity 0.3s;
+	-o-transition: background-color 0.3s,opacity 0.3s;
+	transition: background-color 0.3s,opacity 0.3s;
+}
+
+.button.load {
+	-webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	-moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	-o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
+.button.black {
+	background: var(--huge-black);
+	width: 200px;
+	height: 54px;
+  line-height: 54px;
+  margin: 0;
+	font-size: 16px;
+}
+
+.button:hover {
+	background-color: #ec008c !important;
+	color: #fff;
+}
+
+.form-container .form-input {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+.form-container .form-input label {
+  margin-bottom: 20px;
+}
+
+.form-container .form-input input,
+.form-container .form-input textarea {
+  font-family: "HUGEAvantGarde", Georgia;
+  font-size: .8rem;
+  height: 25px;
+  padding: 10px;
+  width: 400px;
+}
+
+.form-submitted {
+  background: var(--huge-magenta);
+  display: none;
+  padding: 10px;
+}
+
+.form-submitted p {
+  color: var(--huge-white);
+}
+
+.form-container.submitted .form-submitted {
+  display: block;
+}
+
+.form-container .form-input textarea {
+  height: 70px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+  
+  .form-wrapper {
+    width: 80%;  
+  }
+
+  .form-container .form-input input, 
+  .form-container .form-input textarea {
+    width: auto;
+  }
+
+  .word .wrapper {
+    width: 95%;
+  }
+
+  .submenu {
+    padding: 50px 0;
+    width: 85%;
+  }
+
+  .purpose-data-container {
+    top: 20%;
+    width: 80%;
+  }
+
+  .santa-random {
+    height: 25px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .form-wrapper {
+    width: 50%;  
+  }
+  .form-container .form-input input, 
+  .form-container .form-input textarea {
+    width: 95%;
+  }
 }
