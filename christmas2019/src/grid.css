@@ -6,6 +6,15 @@
   font-size: .9rem;
 }
 
+.grid-header {
+  display: flex;
+  height: 20px;
+  background-color: var(--huge-grey);
+  margin: 0 auto;
+  width: 83vw;
+  transform: perspective(300px) rotateX(45deg);
+}
+
 .drawer-box {
   position: relative;
   display: flex;
@@ -56,7 +65,7 @@
   "box5 box6 box7 box8"
   "box9 box10 box11 box12"
   "box13 box13 box13 box13";
-  margin: 2vh auto 2vh auto;
+  margin: 0 auto 2vh auto;
   width: 85vw;
 }
 
@@ -78,7 +87,7 @@
   0 13px 15px rgba(0,0,0,0.4);
   position: relative;
   z-index: 2;
-  transform: translate3d(0, 20px, 100px);
+  transform: translate3d(0, 20px, 100px) perspective(500px) rotateX(-5deg);
 }
 
 .wrapper .grid-box:hover .drawer-content .drawer-title,

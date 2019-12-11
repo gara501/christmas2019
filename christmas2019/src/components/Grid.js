@@ -72,6 +72,9 @@ const Grid = () => {
   
   return (
     <div className="grid">
+      <div className="grid-header">
+        
+      </div>
       <div className="wrapper">
         { offices.map( drawerBox => (
           <DrawerBox key={drawerBox.id} drawerBox={drawerBox} />
