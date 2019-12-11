@@ -71,14 +71,14 @@
 
 .wrapper .grid-box {
   animation: fadeIn 300ms ease-in normal backwards;
-  background: var(--huge-grey-dark2);
+  background-image:radial-gradient(circle, var(--huge-grey-dark2), var(--huge-grey-dark));
   font-size: 5rem;
   color: white;
   font-family: sans-serif;
   box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.12), 
   0 1px 5px rgba(0,0,0,0.24);
   transition: all 250ms;
-  text-align: center;
+  text-align: center;  
   
 }
 

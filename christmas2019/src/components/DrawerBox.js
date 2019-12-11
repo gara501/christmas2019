@@ -7,7 +7,7 @@ const DrawerBox = ({drawerBox}) => (
     </div>
     <div className="drawer-content">
       <div className="drawer-sticker">
-        <h4 className="drawer-title">{drawerBox.name}</h4>
+        <h4 className="drawer-title">{drawerBox.office}</h4>
         <span className="drawer-total">{drawerBox.total}</span>
       </div>
     </div>
