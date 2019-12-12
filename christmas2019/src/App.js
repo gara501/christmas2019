@@ -1,8 +1,9 @@
 import React, { useState, useEffect }  from 'react';
-import Grid from './components/Grid';
-import axios from 'axios';
+import Swal from 'sweetalert2';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import Grid from './components/Grid';
+import FormMessage from './components/FormMessage';
 
 function App() {
   const [wishes, updateWishes] = useState([]);
@@ -115,15 +116,26 @@ function App() {
   }
 
   const writeData = (post) => {
+    const fbpost = {
+      name: post.name,
+      office: post.office,
+      purpose: post.message
+    };
+    
     const newPostKey = firebase.database().ref().child('purposes').push().key;
     let updates = {};
     let response = undefined;
-    updates['purposes/' + newPostKey] = post;
+    updates['purposes/' + newPostKey] = fbpost;
     response = firebase.database().ref().update(updates);
 
     response.then((data) => {
       // let event = new Event("closeForm", {bubbles: true});
       // document.dispatchEvent(event);
+      Swal.fire(
+        'Message Sent!',
+        'Your message has been sent, thanks!',
+        'success'
+      )
     });
     return true;
   }
@@ -131,6 +143,7 @@ function App() {
   return (
     <div className="app">
      <h2 className="title">HUGE WISHES DRAWER</h2>
+     <FormMessage writeData={writeData} offices={offices} />
      <Grid wishes={offices} />
     </div>
   );

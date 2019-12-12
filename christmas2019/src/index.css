@@ -135,7 +135,7 @@ h1,h2,h3,h4,h5,h6, p {
 .santa-random:hover {
   transform: scale(1.1);
 }
-
+/*
 .form-container  {
   background: var(--huge-bg-modal-white);
   height: 100%;
@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6, p {
   z-index: 1;
   display: none;
 }
-
+*/
 .purpose-data {
   background: var(--huge-bg-modal-white);
   height: 100%;
@@ -264,6 +264,8 @@ h1,h2,h3,h4,h5,h6, p {
 	display: inline-block;
 	font-family: Arial,sans-serif;
   font-weight: bold;
+  height: 60px;
+  width: 100%;
   padding: 0 20px;
 	text-align: center;
 	text-decoration: none !important;
@@ -294,16 +296,46 @@ h1,h2,h3,h4,h5,h6, p {
 	color: #fff;
 }
 
+.form-wrapper {
+  display: flex;
+  width: 85vw;
+}
+
+.form-container {
+  width: 100%;
+}
+
 .form-container .form-input {
   display: flex;
   flex-flow: column;
   justify-content: center;
   padding: 10px 0;
 }
-.form-container .form-input label {
-  margin-bottom: 20px;
+
+.form-container input,
+.form-container select {
+  font-size: 1.2rem;
+  height: 30px;
+  padding: 10px;
 }
 
+.form-container input[type=submit] {
+  background: var(--huge-black);
+  color: var(--huge-white);
+  cursor: pointer;
+  transition: all 250ms;
+	width: 200px;
+	height: 54px;
+  margin: 0;
+	font-size: 1.2rem;
+} 
+
+.form-container input[type=submit]:hover {
+  transform: perspective(200px) rotateX(-15deg);
+}
+
+
+/*
 .form-container .form-input input,
 .form-container .form-input textarea {
   font-family: "HUGEAvantGarde", Georgia;
@@ -374,3 +406,4 @@ h1,h2,h3,h4,h5,h6, p {
     width: 95%;
   }
 }
+*/
