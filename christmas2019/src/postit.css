@@ -1,0 +1,16 @@
+.wall {
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  width: 85vw;
+  overflow: hidden;
+}
+.postit {
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  padding: 10px;
+}

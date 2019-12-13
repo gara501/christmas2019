@@ -4,9 +4,10 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import Grid from './components/Grid';
 import FormMessage from './components/FormMessage';
+import Wall from './components/Wall';
 
 function App() {
-  const [wishes, updateWishes] = useState([]);
+  const [messages, updateMessages] = useState([]);
   const [appState, updateAppSate] = useState([]);
   const [offices, updateOffices] = useState([
     {
@@ -92,26 +93,24 @@ function App() {
     firebase.database();
   }
 
-  const getAllMessages = () => {
+  const getAllMessages =  () => {
     let posts = firebase.database().ref('purposes/');
     let postsData = [];
     
     posts.orderByKey().on('child_added', (snapshot) => {
       let currentPosts = [...offices];
-      postsData.push({
-        name: snapshot.val().name,
-        office: snapshot.val().office,
-        purpose: snapshot.val().purpose
-      });
-      
+      let newPost = snapshot.val();
+      postsData.push(newPost);
+
       currentPosts.map( item => {
-        if (item.office == snapshot.val().office) {
+        if (item.office == newPost.office) {
           item.total++;
         }
         return item;
       })
 
       updateOffices(currentPosts);
+      updateMessages([...postsData], postsData);
     });
   }
 
@@ -143,6 +142,7 @@ function App() {
   return (
     <div className="app">
      <h2 className="title">HUGE WISHES DRAWER</h2>
+     <Wall messages={messages} />
      <FormMessage writeData={writeData} offices={offices} />
      <Grid wishes={offices} />
     </div>
