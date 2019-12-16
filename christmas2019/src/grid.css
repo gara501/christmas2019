@@ -6,6 +6,20 @@
   font-size: .9rem;
 }
 
+.grid-showing-messages .grid-box, .grid-showing-messages .grid-header {
+  opacity: 0;
+}
+
+.grid-showing-messages .wrapper {
+  background: transparent;
+  display: block;
+  perspective: 100vw;
+}
+
+.grid-showing-messages .grid-box-active {
+  opacity: 1;
+}
+
 .grid-header {
   display: flex;
   height: 20px;
@@ -65,33 +79,51 @@
 
 .wrapper {
   background: var(--huge-black);
-  display: grid;
-  height: 85vh;
+  /* display: grid; */
+  /* height: 85vh;
   grid-template-rows: 25% 25% 25% 25%;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-areas:
   "box1 box2 box3 box4"
   "box5 box6 box7 box8"
   "box9 box10 box11 box12"
-  "box13 box13 box13 box13";
+  "box13 box13 box13 box13"; */
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto 2vh auto;
+  height: 85vw;
   width: 85vw;
 }
 
 .wrapper .grid-box {
   animation: fadeIn 300ms ease-in normal backwards;
-  background-image:radial-gradient(circle, var(--huge-grey-dark2), var(--huge-grey-dark));
+  /* background-image:radial-gradient(circle, var(--huge-grey-dark2), var(--huge-grey-dark)); */
   font-size: 5rem;
   color: white;
   font-family: sans-serif;
   box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.12), 
   0 1px 5px rgba(0,0,0,0.24);
   transition: all 250ms;
-  text-align: center;
-  
+  text-align: center;  
+  position: absolute;
+  height: calc(85vw / 4);
+  width: calc(85vw / 4);
 }
 
-.wrapper .grid-box:hover {
+.grid-box-active, .grid-box-active.cube {
+  /* background-image: none; */
+  box-shadow: none;
+  left: 25% !important;
+  top: 25% !important;
+  width: 50%;
+  height: 50%;
+  transition: all 1s;
+  /* transform: translateZ(20vw); */
+  /* transform: translateY(-50%) translateX(-50%); */
+  z-index: 2;
+}
+
+.wrapper .grid-box:not(.grid-box-active):hover {
   box-shadow:0 1.5rem 2rem rgba(0,0,0,0.3), 
   0 13px 15px rgba(0,0,0,0.4);
   position: relative;
