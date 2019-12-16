@@ -27,20 +27,29 @@
   flex-flow: row;
   justify-content: center;
   position: relative;
-  top: 80%;
+  top: 70%;
 }
 
 .drawer-sticker {
-  display: flex; 
+  display: flex;
+  align-items: center;
 }
 
 .drawer-title, .drawer-total {
   color: var(--huge-grey);
-  font-size: 1rem;
   transition: all 250ms;
+  font-size: 1rem;
 }
 
 .drawer-total {
+  height: 20px;
+  width: 20px;
+  font-size: .8rem;
+  line-height: 20px;;
+  border-radius: 50%;
+  color: var(--huge-white);
+  background: var(--huge-black);
+  padding: 5px;
   margin-left: 10px;
 }
 
@@ -78,7 +87,7 @@
   box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.12), 
   0 1px 5px rgba(0,0,0,0.24);
   transition: all 250ms;
-  text-align: center;  
+  text-align: center;
   
 }
 
@@ -88,11 +97,17 @@
   position: relative;
   z-index: 2;
   transform: translate3d(0, 20px, 100px) perspective(500px) rotateX(-5deg);
+  cursor: pointer;
 }
 
 .wrapper .grid-box:hover .drawer-content .drawer-title,
 .wrapper .grid-box:hover .drawer-content .drawer-total {
   color: var(--huge-white);
+}
+
+.wrapper .grid-box:hover .drawer-content .drawer-total {
+  color: var(--huge-white);
+  box-shadow: 1px 1px 1px 1px rgba(100,100,100,1);
 }
 
 .wrapper .el1 { grid-area: box1; animation-delay: 100ms;}

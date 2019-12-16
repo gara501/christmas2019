@@ -10,6 +10,7 @@ const FormMessage = ({offices, writeData}) => {
   });
 
   const [error, saveError] = useState(false);
+  const [formvisible, updateFormVisible] = useState(false);
 
   const handleChange = e => {
     updateFormData({
@@ -49,9 +50,25 @@ const FormMessage = ({offices, writeData}) => {
     });
   }
 
+  const expandForm = (e) => {
+    e.preventDefault();
+    updateFormVisible(true);
+  }
+
+  const closeForm = (e) => {
+    e.preventDefault();
+    updateFormVisible(false);
+  }
+
   return (
     <div className="form-wrapper">
-      <div className="form-container">
+      <div className="form-init" onClick={expandForm} >
+        <a href=""><h4>Send Message</h4></a>
+      </div>
+      <div className={`form-container ${formvisible ? "form-open" : ""}`}>
+        <i className="material-icons icon-close" onClick={closeForm}>
+          close
+        </i>
         <form
         onSubmit={sendData}>
           <div className="form-input">
