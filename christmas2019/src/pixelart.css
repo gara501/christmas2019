@@ -24,9 +24,28 @@
 
 .treasures {
   display: flex;
+  z-index: 21;
 }
 
 .treasures img {
   display: flex;
   margin-left: 20px;
+  transition: all 200ms linear;
+  transform-origin: center;
+}
+
+.treasures img:hover {
+  display: flex;
+  margin-left: 20px;
+  transform: scale(1.2);
+}
+
+.invalid {
+  animation: invalid 100ms ease-in normal backwards 2;
+}
+
+@keyframes invalid {
+  0% { transform: rotateZ(10deg)}
+  50% { transform: rotateZ(-10deg)}
+  100% {transform: rotateZ(10deg)}
 }

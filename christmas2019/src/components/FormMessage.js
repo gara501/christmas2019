@@ -85,7 +85,6 @@ const FormMessage = ({offices, writeData}) => {
             <select 
               onChange={handleChange}  
               name="office"
-              clas
               value={formData.office}>
               <option>Select Office:</option>
               {
@@ -110,7 +109,6 @@ const FormMessage = ({offices, writeData}) => {
           </div>
           {(error) ? <Error message="All fields are mandatory!" />: null}
           <input className="nes-btn is-primary" type="submit" value="Send" />
-        
         </form>
       </div>
     </div>
