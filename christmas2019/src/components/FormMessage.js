@@ -61,11 +61,11 @@ const FormMessage = ({offices, writeData}) => {
   }
 
   return (
-    <div className="form-wrapper">
-      <div className="form-init" onClick={expandForm} >
-        <a href=""><h4>Send Message</h4></a>
+    <div className="form-wrapper ">
+      <div className="form-init">
+        <button type="button" onClick={expandForm} className="nes-btn is-primary">Send Message</button>
       </div>
-      <div className={`form-container ${formvisible ? "form-open" : ""}`}>
+      <div className={`form-container nes-container is-rounded ${formvisible ? "form-open" : ""}`}>
         <i className="material-icons icon-close" onClick={closeForm}>
           close
         </i>
@@ -75,15 +75,17 @@ const FormMessage = ({offices, writeData}) => {
             <input 
                 type="text" 
                 name="name"
+                className="nes-input"
                 value={formData.name}
                 placeholder="Your Name"
                 onChange={handleChange}
             />
           </div>
-          <div className="form-input">
+          <div className="nes-select form-input">
             <select 
               onChange={handleChange}  
               name="office"
+              clas
               value={formData.office}>
               <option>Select Office:</option>
               {
@@ -94,16 +96,20 @@ const FormMessage = ({offices, writeData}) => {
             </select>
           </div>
           <div className="form-input">
-            <input 
-                type="text" 
-                name="message"
-                placeholder="Your Message"
-                onChange={handleChange}
-                value={formData.message}
-            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              onChange={handleChange}
+              value={formData.message}
+              rows="5"
+              cols="23"
+              className="nes-textarea"
+            >
+
+            </textarea>
           </div>
-          {(error) ? <Error message="Todos los campos son obligatorios" />: null}
-          <input type="submit" value="Send" />
+          {(error) ? <Error message="All fields are mandatory!" />: null}
+          <input className="nes-btn is-primary" type="submit" value="Send" />
         
         </form>
       </div>

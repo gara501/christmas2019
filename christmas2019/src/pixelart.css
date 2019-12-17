@@ -1,0 +1,32 @@
+.layer10 {
+  left: 75%;
+  top: 80%;
+  z-index: 100;
+}
+
+.nes-dialog.is-rounded {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.wizard-man img {
+  animation: wizard 2s ease-in normal backwards infinite;
+  transform: rotateY(180deg);
+  height: 108px;
+  width: 112px;
+}
+
+@keyframes wizard {
+  0% { transform: translateY(-10px) rotateY(180deg)}
+  50% { transform: translateY(0) rotateY(180deg)}
+  100% { transform: translateY(-10px) rotateY(180deg)}
+}
+
+.treasures {
+  display: flex;
+}
+
+.treasures img {
+  display: flex;
+  margin-left: 20px;
+}

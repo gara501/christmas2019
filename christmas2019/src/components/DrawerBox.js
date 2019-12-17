@@ -1,15 +1,16 @@
 import React from 'react';
 
 const DrawerBox = ({drawerBox}) => (
-  <div className={'grid-box drawer-box ' + drawerBox.id }>
-    <div className="drawer-handle"></div>
-    <div className="drawer-content">
-      <div className="drawer-sticker">
-        <h4 className="drawer-title">{drawerBox.office}</h4>
-        <span className="drawer-total">{drawerBox.total}</span>
-      </div>
-    </div>
+  <div className="drawer-box">
+    <a href="#" class="nes-badge is-icon">
+      <span class="is-dark">{drawerBox.total}</span>
+      <span class="is-warning">{drawerBox.office}</span>
+    </a>
+    <div className="building"></div>
   </div>
+
+    
+  
 );
  
 export default DrawerBox;

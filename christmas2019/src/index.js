@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './HUGE-AvantGarde-Bold.css';
 import './grid.css';
+import './pixelart.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

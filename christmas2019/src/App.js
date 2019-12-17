@@ -2,9 +2,10 @@ import React, { useState, useEffect }  from 'react';
 import Swal from 'sweetalert2';
 import firebase from 'firebase/app';
 import 'firebase/database';
-import Grid from './components/Grid';
-import Envelopes from './components/Envelopes';
 import FormMessage from './components/FormMessage';
+import Treasure from './components/Treasure';
+import Wizard from './components/Wizard';
+
 
 function App() {
   const [messages, updateMessages] = useState([]);
@@ -141,10 +142,29 @@ function App() {
 
   return (
     <div className="app">
-     <h2 className="title">HUGE WISHES DRAWER</h2>
-      <Envelopes messages={messages} />
-     <FormMessage writeData={writeData} offices={offices} />
-     <Grid wishes={offices} />
+      <div className="container">
+      <div className="paralax-bg">
+        <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
+        <img className="layer layer2" src={process.env.PUBLIC_URL + '/images/2.png'} />
+        <img className="layer layer3" src={process.env.PUBLIC_URL + '/images/3.png'} />
+        <img className="layer layer4" src={process.env.PUBLIC_URL + '/images/4.png'} />
+        <img className="layer layer5" src={process.env.PUBLIC_URL + '/images/5.png'} />
+        <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
+        <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
+        <section className="message-list layer layer8">
+          <section className="message -left">          
+            <i className="nes-bcrikko"></i>
+            <div className="nes-balloon from-left">
+              <p>Hi Huger!, share your wishes for the next year.</p>
+            </div>
+          </section>
+          <FormMessage writeData={writeData} offices={offices} />
+        </section>
+        <Treasure/>
+        <Wizard />
+      </div>
+  
+      </div>
     </div>
   );
 }

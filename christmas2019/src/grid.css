@@ -47,8 +47,8 @@
   font-size: .8rem;
   line-height: 20px;;
   border-radius: 50%;
-  color: var(--huge-white);
-  background: var(--huge-black);
+  color: var(--huge-black);
+  background: var(--huge-white);
   padding: 5px;
   margin-left: 10px;
 }
@@ -64,9 +64,15 @@
 } 
 
 .wrapper {
-  background: var(--huge-black);
+  background-color: silver;
+  background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px),
+  linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
   display: grid;
-  height: 85vh;
+  height: 100vh;
   grid-template-rows: 25% 25% 25% 25%;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-areas:
@@ -128,3 +134,63 @@
   from { transform: scale(0);}
   to { transform: scale(1);}
 }
+
+.paralax-bg {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.layer {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 3s ease;
+}
+
+.layer.layer7 {
+  position: relative;
+  text-align: center;
+}
+
+.extruded-text {
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.layer.layer8 {
+  padding: 0 20px;
+  position: absolute;
+  top: 25%;
+  z-index: 8;
+}
+
+.layer.layer9 {
+  bottom: 0;
+  left: 20%;
+  top: 88%;
+}
+
+.layer.layer9 img {
+  height: 50px;
+}
+
+.paralax-bg:hover .layer2 {
+  transform: translateX(50px);
+}
+
+.paralax-bg:hover .layer3 {
+  transform: translateX(-50px);
+}
+
+
+.move-right {
+  transform: translateX(50px);
+} 
+
+.move-left {
+  transform: translateX(-50px);
+} 

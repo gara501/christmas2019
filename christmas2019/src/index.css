@@ -18,7 +18,8 @@
 */
 body {
   background: var(--huge-white);
-  font-family: "HUGEAvantGarde", Georgia;
+  /*font-family: "HUGEAvantGarde", Georgia;*/
+  font-family: "Press Start 2P";
   letter-spacing: -.01719rem;
 }
 
@@ -48,10 +49,18 @@ h1,h2,h3,h4,h5,h6, p {
   color: var(--huge-black);
 }
 
+.app {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
   width: 100%;
 }
 
@@ -135,21 +144,7 @@ h1,h2,h3,h4,h5,h6, p {
 .santa-random:hover {
   transform: scale(1.1);
 }
-/*
-.form-container  {
-  background: var(--huge-bg-modal-white);
-  height: 100%;
-  left: 0;
-  overflow: auto;
-  position: fixed;
-  transform: scale(0);
-  transition: .2s all ease-in;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  display: none;
-}
-*/
+
 .purpose-data {
   background: var(--huge-bg-modal-white);
   height: 100%;
@@ -173,12 +168,10 @@ h1,h2,h3,h4,h5,h6, p {
 }
 
 .form-wrapper {
-  background: var(--huge-white);
   border-radius: 10px;
   margin: 0 auto;
-  padding: 20px;
   position: relative;
-  top: 30%;
+  top: 10%;
   width: 50%;
 }
 
@@ -258,44 +251,6 @@ h1,h2,h3,h4,h5,h6, p {
   text-decoration: none;
 }
 
-.button {
-  color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	font-family: Arial,sans-serif;
-  font-weight: bold;
-  height: 60px;
-  width: 100%;
-  padding: 0 20px;
-	text-align: center;
-	text-decoration: none !important;
-	-webkit-transition: background-color 0.3s,opacity 0.3s;
-	-moz-transition: background-color 0.3s,opacity 0.3s;
-	-o-transition: background-color 0.3s,opacity 0.3s;
-	transition: background-color 0.3s,opacity 0.3s;
-}
-
-.button.load {
-	-webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-	-moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-	-o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-}
-
-.button.black {
-	background: var(--huge-black);
-	width: 200px;
-	height: 54px;
-  line-height: 54px;
-  margin: 0;
-	font-size: 16px;
-}
-
-.button:hover {
-	background-color: #ec008c !important;
-	color: #fff;
-}
-
 .form-wrapper {
   display: flex;
   flex-flow: column;
@@ -304,7 +259,6 @@ h1,h2,h3,h4,h5,h6, p {
 
 .form-container {
   position: absolute;
-  height: 300px;
   width: 50%;
   z-index: 3;
   background: white;
@@ -312,8 +266,17 @@ h1,h2,h3,h4,h5,h6, p {
   top: 130px;
   padding: 20px;
   border: 1px solid black;
-  transform: scale(0) translateX(-50%);
+  transform: scale(0) rotateY(-90deg) translateX(-50%);
   transition: all 250ms linear;
+}
+
+.error-message {
+  margin: 10px 0;
+}
+
+.is-error {
+  background: red;
+  color: white;
 }
 
 .form-container .form-input {
@@ -323,15 +286,8 @@ h1,h2,h3,h4,h5,h6, p {
   padding: 10px 0;
 }
 
-.form-container input,
-.form-container select {
-  font-size: 1.2rem;
-  height: 30px;
-  padding: 10px;
-}
-
-.form-container select {
-  height: 50px;
+.form-container textarea {
+  height: 70px;
 }
 
 .form-container input[type=submit] {
@@ -341,7 +297,7 @@ h1,h2,h3,h4,h5,h6, p {
   transition: all 250ms;
 	width: 200px;
 	height: 54px;
-  margin: 0;
+  margin-top: 20px;
 	font-size: 1.2rem;
 } 
 
@@ -350,12 +306,10 @@ h1,h2,h3,h4,h5,h6, p {
 }
 
 .form-container.form-open {
-  transform: scale(1) translateX(-50%);
+  transform: scale(1) translate3d(-50%, -100%,0) rotateY(0);
 }
 
 .form-init {
-  border: 1px solid black;
-  padding: 20px 0;
   text-align: center;
   width: 100%;
 }
@@ -372,52 +326,72 @@ h1,h2,h3,h4,h5,h6, p {
   cursor: pointer;
 }
 
-.envelope-wrapper {
-  position: relative;
-  height: 40px;
-  width: 100px;
+.is-warning {
+  width: 100%;
 }
 
-.envelopes {
+.message.-left {
+  align-items: flex-end;
   display: flex;
   flex-flow: row wrap;
-
+  justify-content: space-between;
 }
 
-.envelope-wrapper {
-  border: 1px solid var(--huge-black);
-  border-radius: 5px;
+.nes-bcrikko {
+  flex: 1;
+}
+
+.nes-balloon {
+  flex: 9;
+}
+
+.building {
+  position: absolute;
+  animation: building 1s infinite;
+  -webkit-animation: building 1s infinite;
+  -moz-animation: building 1s infinite;
+  -o-animation: building 1s infinite;
+  transform: scale(.5);
+}
+
+@keyframes building {
+0%, 100%{
+  box-shadow: 40px 40px 0 0 rgba(0, 0, 0, 1), 50px 40px 0 0 rgba(0, 0, 0, 1), 60px 40px 0 0 rgba(0, 0, 0, 1), 70px 40px 0 0 rgba(0, 0, 0, 1), 80px 40px 0 0 rgba(0, 0, 0, 1), 90px 40px 0 0 rgba(0, 0, 0, 1), 100px 40px 0 0 rgba(0, 0, 0, 1), 110px 40px 0 0 rgba(0, 0, 0, 1), 120px 40px 0 0 rgba(0, 0, 0, 1), 130px 40px 0 0 rgba(0, 0, 0, 1), 140px 40px 0 0 rgba(0, 0, 0, 1), 150px 40px 0 0 rgba(0, 0, 0, 1), 160px 40px 0 0 rgba(0, 0, 0, 1), 40px 50px 0 0 rgba(0, 0, 0, 1), 50px 50px 0 0 rgba(255, 193, 7, 1), 60px 50px 0 0 rgba(255, 193, 7, 1), 70px 50px 0 0 rgba(255, 193, 7, 1), 80px 50px 0 0 rgba(255, 152, 0, 1), 90px 50px 0 0 rgba(255, 152, 0, 1), 100px 50px 0 0 rgba(255, 152, 0, 1), 110px 50px 0 0 rgba(255, 152, 0, 1), 120px 50px 0 0 rgba(255, 152, 0, 1), 130px 50px 0 0 rgba(255, 152, 0, 1), 140px 50px 0 0 rgba(255, 152, 0, 1), 150px 50px 0 0 rgba(255, 152, 0, 1), 160px 50px 0 0 rgba(0, 0, 0, 1), 40px 60px 0 0 rgba(0, 0, 0, 1), 50px 60px 0 0 rgba(255, 193, 7, 1), 60px 60px 0 0 rgba(255, 193, 7, 1), 70px 60px 0 0 rgba(0, 0, 0, 1), 80px 60px 0 0 rgba(0, 0, 0, 1), 90px 60px 0 0 rgba(0, 0, 0, 1), 100px 60px 0 0 rgba(255, 152, 0, 1), 110px 60px 0 0 rgba(0, 0, 0, 1), 120px 60px 0 0 rgba(0, 0, 0, 1), 130px 60px 0 0 rgba(0, 0, 0, 1), 140px 60px 0 0 rgba(255, 152, 0, 1), 150px 60px 0 0 rgba(255, 152, 0, 1), 160px 60px 0 0 rgba(0, 0, 0, 1), 40px 70px 0 0 rgba(0, 0, 0, 1), 50px 70px 0 0 rgba(255, 193, 7, 1), 60px 70px 0 0 rgba(255, 152, 0, 1), 70px 70px 0 0 rgba(0, 188, 212, 1), 80px 70px 0 0 rgba(0, 188, 212, 1), 90px 70px 0 0 rgba(0, 0, 0, 1), 100px 70px 0 0 rgba(255, 152, 0, 1), 110px 70px 0 0 rgba(0, 188, 212, 1), 120px 70px 0 0 rgba(0, 188, 212, 1), 130px 70px 0 0 rgba(0, 0, 0, 1), 140px 70px 0 0 rgba(255, 152, 0, 1), 150px 70px 0 0 rgba(255, 152, 0, 1), 160px 70px 0 0 rgba(0, 0, 0, 1), 40px 80px 0 0 rgba(0, 0, 0, 1), 50px 80px 0 0 rgba(255, 152, 0, 1), 60px 80px 0 0 rgba(255, 152, 0, 1), 70px 80px 0 0 rgba(255, 152, 0, 1), 80px 80px 0 0 rgba(255, 152, 0, 1), 90px 80px 0 0 rgba(255, 152, 0, 1), 100px 80px 0 0 rgba(255, 152, 0, 1), 110px 80px 0 0 rgba(255, 152, 0, 1), 120px 80px 0 0 rgba(255, 152, 0, 1), 130px 80px 0 0 rgba(255, 152, 0, 1), 140px 80px 0 0 rgba(255, 152, 0, 1), 150px 80px 0 0 rgba(255, 152, 0, 1), 160px 80px 0 0 rgba(0, 0, 0, 1), 40px 90px 0 0 rgba(0, 0, 0, 1), 50px 90px 0 0 rgba(0, 0, 0, 1), 60px 90px 0 0 rgba(0, 0, 0, 1), 70px 90px 0 0 rgba(0, 0, 0, 1), 80px 90px 0 0 rgba(0, 0, 0, 1), 90px 90px 0 0 rgba(0, 0, 0, 1), 100px 90px 0 0 rgba(0, 0, 0, 1), 110px 90px 0 0 rgba(0, 0, 0, 1), 120px 90px 0 0 rgba(0, 0, 0, 1), 130px 90px 0 0 rgba(0, 0, 0, 1), 140px 90px 0 0 rgba(0, 0, 0, 1), 150px 90px 0 0 rgba(0, 0, 0, 1), 160px 90px 0 0 rgba(0, 0, 0, 1), 40px 100px 0 0 rgba(0, 0, 0, 1), 50px 100px 0 0 rgba(255, 193, 7, 1), 60px 100px 0 0 rgba(255, 193, 7, 1), 70px 100px 0 0 rgba(255, 193, 7, 1), 80px 100px 0 0 rgba(255, 152, 0, 1), 90px 100px 0 0 rgba(255, 152, 0, 1), 100px 100px 0 0 rgba(255, 152, 0, 1), 110px 100px 0 0 rgba(255, 152, 0, 1), 120px 100px 0 0 rgba(255, 152, 0, 1), 130px 100px 0 0 rgba(255, 152, 0, 1), 140px 100px 0 0 rgba(255, 152, 0, 1), 150px 100px 0 0 rgba(255, 152, 0, 1), 160px 100px 0 0 rgba(0, 0, 0, 1), 40px 110px 0 0 rgba(0, 0, 0, 1), 50px 110px 0 0 rgba(255, 193, 7, 1), 60px 110px 0 0 rgba(255, 193, 7, 1), 70px 110px 0 0 rgba(0, 0, 0, 1), 80px 110px 0 0 rgba(0, 0, 0, 1), 90px 110px 0 0 rgba(0, 0, 0, 1), 100px 110px 0 0 rgba(255, 152, 0, 1), 110px 110px 0 0 rgba(0, 0, 0, 1), 120px 110px 0 0 rgba(0, 0, 0, 1), 130px 110px 0 0 rgba(0, 0, 0, 1), 140px 110px 0 0 rgba(255, 152, 0, 1), 150px 110px 0 0 rgba(255, 152, 0, 1), 160px 110px 0 0 rgba(0, 0, 0, 1), 40px 120px 0 0 rgba(0, 0, 0, 1), 50px 120px 0 0 rgba(255, 193, 7, 1), 60px 120px 0 0 rgba(255, 193, 7, 1), 70px 120px 0 0 rgba(3, 169, 244, 1), 80px 120px 0 0 rgba(3, 169, 244, 1), 90px 120px 0 0 rgba(0, 0, 0, 1), 100px 120px 0 0 rgba(255, 152, 0, 1), 110px 120px 0 0 rgba(0, 188, 212, 1), 120px 120px 0 0 rgba(0, 188, 212, 1), 130px 120px 0 0 rgba(0, 0, 0, 1), 140px 120px 0 0 rgba(255, 152, 0, 1), 150px 120px 0 0 rgba(255, 152, 0, 1), 160px 120px 0 0 rgba(0, 0, 0, 1), 40px 130px 0 0 rgba(0, 0, 0, 1), 50px 130px 0 0 rgba(255, 193, 7, 1), 60px 130px 0 0 rgba(255, 152, 0, 1), 70px 130px 0 0 rgba(0, 188, 212, 1), 80px 130px 0 0 rgba(0, 188, 212, 1), 90px 130px 0 0 rgba(0, 0, 0, 1), 100px 130px 0 0 rgba(255, 152, 0, 1), 110px 130px 0 0 rgba(0, 188, 212, 1), 120px 130px 0 0 rgba(0, 188, 212, 1), 130px 130px 0 0 rgba(0, 0, 0, 1), 140px 130px 0 0 rgba(255, 152, 0, 1), 150px 130px 0 0 rgba(255, 152, 0, 1), 160px 130px 0 0 rgba(0, 0, 0, 1), 40px 140px 0 0 rgba(0, 0, 0, 1), 50px 140px 0 0 rgba(255, 152, 0, 1), 60px 140px 0 0 rgba(255, 152, 0, 1), 70px 140px 0 0 rgba(255, 152, 0, 1), 80px 140px 0 0 rgba(255, 152, 0, 1), 90px 140px 0 0 rgba(255, 152, 0, 1), 100px 140px 0 0 rgba(255, 152, 0, 1), 110px 140px 0 0 rgba(255, 152, 0, 1), 120px 140px 0 0 rgba(255, 152, 0, 1), 130px 140px 0 0 rgba(255, 152, 0, 1), 140px 140px 0 0 rgba(255, 152, 0, 1), 150px 140px 0 0 rgba(255, 152, 0, 1), 160px 140px 0 0 rgba(0, 0, 0, 1), 40px 150px 0 0 rgba(0, 0, 0, 1), 50px 150px 0 0 rgba(255, 152, 0, 1), 60px 150px 0 0 rgba(255, 152, 0, 1), 70px 150px 0 0 rgba(255, 152, 0, 1), 80px 150px 0 0 rgba(255, 152, 0, 1), 90px 150px 0 0 rgba(255, 152, 0, 1), 100px 150px 0 0 rgba(255, 152, 0, 1), 110px 150px 0 0 rgba(255, 152, 0, 1), 120px 150px 0 0 rgba(255, 152, 0, 1), 130px 150px 0 0 rgba(255, 152, 0, 1), 140px 150px 0 0 rgba(255, 152, 0, 1), 150px 150px 0 0 rgba(255, 152, 0, 1), 160px 150px 0 0 rgba(0, 0, 0, 1), 30px 160px 0 0 rgba(0, 0, 0, 1), 40px 160px 0 0 rgba(0, 0, 0, 1), 50px 160px 0 0 rgba(255, 152, 0, 1), 60px 160px 0 0 rgba(255, 152, 0, 1), 70px 160px 0 0 rgba(255, 152, 0, 1), 80px 160px 0 0 rgba(255, 152, 0, 1), 90px 160px 0 0 rgba(255, 152, 0, 1), 100px 160px 0 0 rgba(255, 152, 0, 1), 110px 160px 0 0 rgba(255, 152, 0, 1), 120px 160px 0 0 rgba(255, 152, 0, 1), 130px 160px 0 0 rgba(255, 152, 0, 1), 140px 160px 0 0 rgba(255, 152, 0, 1), 150px 160px 0 0 rgba(255, 152, 0, 1), 160px 160px 0 0 rgba(0, 0, 0, 1), 170px 160px 0 0 rgba(0, 0, 0, 1), 20px 170px 0 0 rgba(0, 0, 0, 1), 30px 170px 0 0 rgba(0, 0, 0, 1), 40px 170px 0 0 rgba(0, 0, 0, 1), 50px 170px 0 0 rgba(0, 0, 0, 1), 60px 170px 0 0 rgba(0, 0, 0, 1), 70px 170px 0 0 rgba(0, 0, 0, 1), 80px 170px 0 0 rgba(0, 0, 0, 1), 90px 170px 0 0 rgba(0, 0, 0, 1), 100px 170px 0 0 rgba(0, 0, 0, 1), 110px 170px 0 0 rgba(0, 0, 0, 1), 120px 170px 0 0 rgba(0, 0, 0, 1), 130px 170px 0 0 rgba(0, 0, 0, 1), 140px 170px 0 0 rgba(0, 0, 0, 1), 150px 170px 0 0 rgba(0, 0, 0, 1), 160px 170px 0 0 rgba(0, 0, 0, 1), 170px 170px 0 0 rgba(0, 0, 0, 1), 180px 170px 0 0 rgba(0, 0, 0, 1), 10px 180px 0 0 rgba(0, 0, 0, 1), 20px 180px 0 0 rgba(96, 125, 139, 1), 30px 180px 0 0 rgba(96, 125, 139, 1), 40px 180px 0 0 rgba(96, 125, 139, 1), 50px 180px 0 0 rgba(96, 125, 139, 1), 60px 180px 0 0 rgba(48, 63, 70, 1), 70px 180px 0 0 rgba(48, 63, 70, 1), 80px 180px 0 0 rgba(48, 63, 70, 1), 90px 180px 0 0 rgba(48, 63, 70, 1), 100px 180px 0 0 rgba(48, 63, 70, 1), 110px 180px 0 0 rgba(48, 63, 70, 1), 120px 180px 0 0 rgba(48, 63, 70, 1), 130px 180px 0 0 rgba(48, 63, 70, 1), 140px 180px 0 0 rgba(48, 63, 70, 1), 150px 180px 0 0 rgba(48, 63, 70, 1), 160px 180px 0 0 rgba(48, 63, 70, 1), 170px 180px 0 0 rgba(48, 63, 70, 1), 180px 180px 0 0 rgba(48, 63, 70, 1), 190px 180px 0 0 rgba(0, 0, 0, 1), 10px 190px 0 0 rgba(0, 0, 0, 1), 20px 190px 0 0 rgba(0, 0, 0, 1), 30px 190px 0 0 rgba(0, 0, 0, 1), 40px 190px 0 0 rgba(0, 0, 0, 1), 50px 190px 0 0 rgba(0, 0, 0, 1), 60px 190px 0 0 rgba(0, 0, 0, 1), 70px 190px 0 0 rgba(0, 0, 0, 1), 80px 190px 0 0 rgba(0, 0, 0, 1), 90px 190px 0 0 rgba(0, 0, 0, 1), 100px 190px 0 0 rgba(0, 0, 0, 1), 110px 190px 0 0 rgba(0, 0, 0, 1), 120px 190px 0 0 rgba(0, 0, 0, 1), 130px 190px 0 0 rgba(0, 0, 0, 1), 140px 190px 0 0 rgba(0, 0, 0, 1), 150px 190px 0 0 rgba(0, 0, 0, 1), 160px 190px 0 0 rgba(0, 0, 0, 1), 170px 190px 0 0 rgba(0, 0, 0, 1), 180px 190px 0 0 rgba(0, 0, 0, 1), 190px 190px 0 0 rgba(0, 0, 0, 1);height: 10px; width: 10px;
+  }
+}
+
+.nes-badge {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  width: 100%;
   z-index: 1;
-  margin: 15px;
+  transform: translateX(-100%);
 }
 
-.envelope, .envelope-ghost {
-  height: 40px;
-  width: 100px;
+.nes-badge.is-icon span.is-warning:last-child {
+  display: flex;
+  width: 8em;
+}
+
+.message-list {
+  z-index: 8;
+}
+
+.character {
+  bottom: 0;
   position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 7;
 }
 
-.envelope-ghost {
-  border: none;
+.player {
   overflow: hidden;
-  transition: 300ms all linear;
-  
+  position: relative;
+  height: 96px;
+  width: 96px;
 }
 
-.envelope-wrapper:hover .envelope-ghost {
-  transform:translateY(-41px) rotateX(-180deg);
-}
-
-.envelope-top {
-  background: transparent;
-  height: 100px;
-  width: 100px;
-  left: 0;
-  top: -90px;
-  transform-origin: 50% 50%;
-  border: 2px solid black;
-  position: absolute;
-  transform: rotate(45deg);
+.player img {
+  height: 96px;
+  width: 96px;
 }
