@@ -51,7 +51,9 @@ h1,h2,h3,h4,h5,h6, p {
 
 .app {
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
+  position: relative;
 }
 
 .container {
@@ -59,10 +61,18 @@ h1,h2,h3,h4,h5,h6, p {
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+
+.frame {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.frame.hidden {
+  transform: translateX(100vw);
 }
 
 .menu {

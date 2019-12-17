@@ -5,6 +5,7 @@ import 'firebase/database';
 import FormMessage from './components/FormMessage';
 import Treasure from './components/Treasure';
 import Wizard from './components/Wizard';
+import Messages from './components/Messages';
 
 
 function App() {
@@ -142,28 +143,32 @@ function App() {
 
   return (
     <div className="app">
-      <div className="container">
-      <div className="paralax-bg">
-        <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
-        <img className="layer layer2" src={process.env.PUBLIC_URL + '/images/2.png'} />
-        <img className="layer layer3" src={process.env.PUBLIC_URL + '/images/3.png'} />
-        <img className="layer layer4" src={process.env.PUBLIC_URL + '/images/4.png'} />
-        <img className="layer layer5" src={process.env.PUBLIC_URL + '/images/5.png'} />
-        <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
-        <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
-        <section className="message-list layer layer8">
-          <section className="message -left">          
-            <i className="nes-bcrikko"></i>
-            <div className="nes-balloon from-left">
-              <p>Hi Huger!, share your wishes for the next year.</p>
-            </div>
-          </section>
-          <FormMessage writeData={writeData} offices={offices} />
-        </section>
-        <Treasure/>
-        <Wizard />
+      <div className="frame hidden">
+        <div className="container">
+          <div className="paralax-bg">
+            <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
+            <img className="layer layer2" src={process.env.PUBLIC_URL + '/images/2.png'} />
+            <img className="layer layer3" src={process.env.PUBLIC_URL + '/images/3.png'} />
+            <img className="layer layer4" src={process.env.PUBLIC_URL + '/images/4.png'} />
+            <img className="layer layer5" src={process.env.PUBLIC_URL + '/images/5.png'} />
+            <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
+            <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
+            <section className="message-list layer layer8">
+              <section className="message -left">          
+                <i className="nes-bcrikko"></i>
+                <div className="nes-balloon from-left">
+                  <p>Hi Huger!, share your wishes for the next year.</p>
+                </div>
+              </section>
+              <FormMessage writeData={writeData} offices={offices} />
+            </section>
+            <Treasure/>
+            <Wizard frame="1" />
+          </div>
+        </div>
       </div>
-  
+      <div className="frame">
+        <Messages messages={messages} />
       </div>
     </div>
   );

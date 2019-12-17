@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Wizard = () => {
-
+const Wizard = ({frame}) => {
+  
   const showMessage = (e) => {
     e.preventDefault();
-    console.log('MAGO', e);
-    document.getElementById('dialog-rounded').showModal();
+    document.querySelector('.nes-dialog').showModal();
   }
 
   return (
@@ -17,7 +16,7 @@ const Wizard = () => {
         <dialog className="nes-dialog is-rounded" id="dialog-rounded">
           <form method="dialog">
             <p className="title">Hi Huger!</p>
-            <p>Choose wisely if you want to get the treasure!</p>
+            <p>{frame === 1? 'Choose wisely if you want to get the treasure!': 'Select one of those pearls of wisdom!'}</p>
             <menu className="dialog-menu">
               <button className="nes-btn is-primary">Confirm</button>
             </menu>
