@@ -137,9 +137,12 @@ function App() {
         frame2: 'frame hidden'
       }
     }
+    updateFrames(frames);
+    /*
     setTimeout(() => {
-      updateFrames(frames);  
+      updateFrames(frames);
     }, 1000)
+    */
   }
 
   const writeData = (post) => {
@@ -181,15 +184,14 @@ function App() {
             <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
             <section className="message-list layer layer8">
               <section className="message -left">          
-                <i className="nes-bcrikko"></i>
-                <div className="nes-balloon from-left">
+                <div className="nes-container is-rounded nes-bg-white">
                   <p>Hi Huger!, share your wishes for the next year.</p>
                 </div>
               </section>
               <FormMessage writeData={writeData} offices={offices} />
             </section>
             <Treasure selectFrame={selectFrame} />
-            <Wizard />
+            <Wizard total={messages.length} />
             <Floor />
           </div>
         </div>

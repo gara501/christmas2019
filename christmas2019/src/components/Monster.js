@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Monster = () => {
+const Monster = ({total}) => {
 
   const showMessage = (e) => {
     e.preventDefault();
@@ -12,6 +12,14 @@ const Monster = () => {
       <div className="monster">
         <img src={process.env.PUBLIC_URL + '/images/developer.png'} onClick={showMessage} />
       </div>
+      <div className="counter-wrapper2">
+        <div className="counter">
+          <a href="#" className="nes-badge is-splited">
+            <span className="is-dark">Total:</span>
+            <span className="is-primary">{total}</span>
+          </a>
+        </div>
+      </div>
       <section className="wizard-dialog">
         <dialog className="nes-dialog is-rounded" id="dialog-rounded2">
           <form method="dialog">
@@ -22,7 +30,7 @@ const Monster = () => {
             </menu>
           </form>
         </dialog>
-        </section>
+      </section>
     </div>
   );
 } 

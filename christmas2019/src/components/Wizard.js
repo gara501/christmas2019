@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Wizard = () => {
+const Wizard = ({total}) => {
 
   const showMessage = (e) => {
     e.preventDefault();
@@ -11,6 +11,14 @@ const Wizard = () => {
     <div className="layer layer10">
       <div className="wizard">
         <img src={process.env.PUBLIC_URL + '/images/developer.png'} onClick={showMessage} />
+      </div>
+      <div className="counter-wrapper">
+        <div className="counter">
+          <a href="#" className="nes-badge is-splited">
+            <span className="is-dark">Total:</span>
+            <span className="is-primary">{total}</span>
+          </a>
+        </div>
       </div>
       <section className="wizard-dialog">
         <dialog className="nes-dialog is-rounded" id="dialog-rounded">

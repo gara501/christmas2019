@@ -196,20 +196,11 @@
   transform: translateX(-50px);
 }
 
-
-.move-right {
-  transform: translateX(50px);
-} 
-
-.move-left {
-  transform: translateX(-50px);
-} 
-
 @keyframes circle {
-  0% { clip-path: circle(100% at 24% 92%); }
-  100% { clip-path: circle(0% at 24% 92%); }
+  0% { clip-path: circle(100% at 50% 50%); }
+  100% { clip-path: circle(0% at 50% 50%); }
 }
 
 .paralax-bg.selected {
-  animation: 1.25s circle;
+  /*animation: 1.4s circle;*/
 }

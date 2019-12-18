@@ -10,10 +10,10 @@
 }
 
 .note {
-  animation: wizard 2s linear normal backwards infinite;
+  animation: note 2s linear normal backwards infinite;
 }
 
-@keyframes wizard {
+@keyframes note {
   0% { 
     transform: translateY(10px);
   }
@@ -68,30 +68,6 @@
   transform: translateX(-50%);
 }
 
-.gem-container {
-  position: relative;
-  margin: 0 10px;
-  height: 16px;
-  width: 16px;
-}
-/*
-.gem {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-image: url('./MonedaD.png');
-  transform: scale(2)  translate(-50%, -50%);
-  animation: play 1s steps(5) infinite;
-}
-
-@keyframes play {
-  from { background-position:    0px; }
-    to { background-position: -80px; }
-}
-*/
-
 .monster {
   position: absolute;
   top: 77%;
@@ -124,79 +100,6 @@
   from { background-position:    0px; }
     to { background-position: -241px; }
 }
-/*
-.monster-data {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-image: url('./yarn.png');
-  transform: scale(2)  translate(-50%, -50%);
-  animation: monster 1s steps(4) infinite;
-}
-
-@keyframes monster {
-  from { background-position:    0px; }
-    to { background-position: -128px; }
-}
-*/
-
-.bat {
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 42px;
-  height: 29px;
-}
-
-.bat-data {
-  width: 42px;
-  height: 29px;
-  top: 50%;
-  left: 50%;
-  background-image: url('./bat.png');
-  transform: scale(2)  translate(-50%, -50%);
-  
-}
-
-.bat-data.idle {
-  animation: bat 1s steps(5) infinite;
-}
-
-.bat.idle {
-  animation: linearm linear 10s infinite;
-}
-
-.bat-data.dead {
-  width: 45px;
-  height: 36px;
-  top: 50%;
-  left: 50%;
-  background-image: url('./bat_sleep.png');
-  transform: scale(2)  translate(-50%, -50%);
-  animation: batdead 1s steps(4) infinite;
-}
-
-@keyframes bat {
-  from { background-position:    0px;}
-    to { background-position: -252px;}
-}
-
-@keyframes batdead {
-  from { background-position:    0px;}
-    to { background-position: -179px;}
-}
-
-@keyframes linearm {
-  from { transform: translateX(-10vw); }
-    to { transform: translateX(110vw);}
-}
-
-@keyframes deadmove {
-  from { transform: translateY(0); }
-    to { transform: translateY(100vh);}
-}
 
 .floor {
   position: absolute;
@@ -215,4 +118,24 @@
   transform: scale(2);
   background-position: -192px -186px;
   display: inline-block;
+}
+
+.counter-wrapper {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 200px;
+}
+
+.counter-wrapper2 {
+  position: absolute;
+  bottom: 160px;
+  right: -70px;
+  width: 200px;
+}
+
+.counter {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
 }
