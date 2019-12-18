@@ -25,10 +25,10 @@ const Treasure = ({selectFrame}) => {
       // ACA VA LO DE ABRIR CON EL EFECTO Y OTRAS COSAS QUE VOY A METER
       parent.classList.add('selected');
       updateInvalid({t1:'', t2:'', t3: ''})
-      selectFrame('frame2');
       setTimeout(() => {
         parent.classList.remove('selected');
       }, 1000)
+      selectFrame('frame2');
     } else {
       parent.classList.remove('selected');
       if (getId === 1) {
