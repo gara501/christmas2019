@@ -1,8 +1,3 @@
-.layer10 {
-  left: 75%;
-  top: 80%;
-  z-index: 100;
-}
 
 .nes-dialog.is-rounded {
   margin: 0 auto;
@@ -11,6 +6,10 @@
 
 .wizard img {
   height: 120px; 
+  transform: rotateY(180deg);
+}
+
+.note {
   animation: wizard 2s linear normal backwards infinite;
 }
 
@@ -75,7 +74,7 @@
   height: 16px;
   width: 16px;
 }
-
+/*
 .gem {
   width: 16px;
   height: 16px;
@@ -90,4 +89,130 @@
 @keyframes play {
   from { background-position:    0px; }
     to { background-position: -80px; }
+}
+*/
+
+.monster {
+  position: absolute;
+  top: 77%;
+  right: 5%;
+}
+
+.monster img {
+  height: 120px; 
+  transform: rotateY(180deg);
+}
+
+.btn-messages {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+}
+
+.portal {
+  position: absolute;
+  bottom: 2%;
+  left: 5%;
+  width: 38px;
+  height: 111px;
+  background-image: url('./portal2.png');
+  transform: scale(1)  translate(-50%, -50%);
+  animation: portal 1s steps(6) infinite;
+}
+
+@keyframes portal {
+  from { background-position:    0px; }
+    to { background-position: -241px; }
+}
+/*
+.monster-data {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url('./yarn.png');
+  transform: scale(2)  translate(-50%, -50%);
+  animation: monster 1s steps(4) infinite;
+}
+
+@keyframes monster {
+  from { background-position:    0px; }
+    to { background-position: -128px; }
+}
+*/
+
+.bat {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 42px;
+  height: 29px;
+}
+
+.bat-data {
+  width: 42px;
+  height: 29px;
+  top: 50%;
+  left: 50%;
+  background-image: url('./bat.png');
+  transform: scale(2)  translate(-50%, -50%);
+  
+}
+
+.bat-data.idle {
+  animation: bat 1s steps(5) infinite;
+}
+
+.bat.idle {
+  animation: linearm linear 10s infinite;
+}
+
+.bat-data.dead {
+  width: 45px;
+  height: 36px;
+  top: 50%;
+  left: 50%;
+  background-image: url('./bat_sleep.png');
+  transform: scale(2)  translate(-50%, -50%);
+  animation: batdead 1s steps(4) infinite;
+}
+
+@keyframes bat {
+  from { background-position:    0px;}
+    to { background-position: -252px;}
+}
+
+@keyframes batdead {
+  from { background-position:    0px;}
+    to { background-position: -179px;}
+}
+
+@keyframes linearm {
+  from { transform: translateX(-10vw); }
+    to { transform: translateX(110vw);}
+}
+
+@keyframes deadmove {
+  from { transform: translateY(0); }
+    to { transform: translateY(100vh);}
+}
+
+.floor {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  top: 95%;
+  height: 38px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.floor-block {
+  height: 38px;
+  width: 96px;
+  background-image: url('./tiles.png');
+  transform: scale(2);
+  background-position: -192px -186px;
+  display: inline-block;
 }

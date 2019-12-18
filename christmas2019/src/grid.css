@@ -182,6 +182,12 @@
   height: 50px;
 }
 
+.layer10 {
+  left: 75%;
+  top: 77%;
+  z-index: 100;
+}
+
 .paralax-bg:hover .layer2 {
   transform: translateX(50px);
 }

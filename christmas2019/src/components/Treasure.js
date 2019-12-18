@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Treasure = () => {
+const Treasure = ({selectFrame}) => {
   
   const [option, updateOption] = useState(1);
   const [invalid, updateInvalid] = useState({
@@ -25,6 +25,10 @@ const Treasure = () => {
       // ACA VA LO DE ABRIR CON EL EFECTO Y OTRAS COSAS QUE VOY A METER
       parent.classList.add('selected');
       updateInvalid({t1:'', t2:'', t3: ''})
+      selectFrame('frame2');
+      setTimeout(() => {
+        parent.classList.remove('selected');
+      }, 1000)
     } else {
       parent.classList.remove('selected');
       if (getId === 1) {

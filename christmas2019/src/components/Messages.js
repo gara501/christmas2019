@@ -1,8 +1,15 @@
 import React from 'react';
-import Wizard from './Wizard';
+import Monster from './Monster';
+import Floor from './Floor';
 
-const Messages = ({messages}) =>  {
-  console.log(messages);
+const Messages = ({messages, selectFrame}) =>  {
+  
+  const returnToInit = () => {
+    const parent = document.querySelector('.paralax-bg');
+    parent.classList.remove('selected');
+    parent.classList.add('selected');
+    selectFrame('frame1')
+  }
 
   return (
     <div className="messages">
@@ -15,14 +22,16 @@ const Messages = ({messages}) =>  {
         <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
         <h3 className="layer layer7 extruded-text">WISHES</h3>
       </div>
+      <div className="portal" onClick={returnToInit}></div>
       <div className="messages-grid layer layer8">
         {messages.map((message) => (
           <div className="gem-container">
-            <div key={message.purpose} className="gem"></div>
+            <img key={message.purpose} className="note" src={process.env.PUBLIC_URL + '/images/note.png'} />
           </div>
         ))}
       </div>
-      <Wizard frame="2" />
+      <Monster />
+      <Floor />
     </div>
   );
 }

@@ -67,6 +67,7 @@ h1,h2,h3,h4,h5,h6, p {
   height: 100vh;
   width: 100vw;
   position: absolute;
+  transition: all 500ms linear;
   top: 0;
   left: 0;
 }

@@ -6,6 +6,7 @@ import FormMessage from './components/FormMessage';
 import Treasure from './components/Treasure';
 import Wizard from './components/Wizard';
 import Messages from './components/Messages';
+import Floor from './components/Floor';
 
 
 function App() {
@@ -122,6 +123,25 @@ function App() {
     });
   }
 
+  const selectFrame = (frameFrom) => {
+    console.log(frameFrom)
+    let frames = {};
+    if (frameFrom === 'frame2') {
+      frames = {
+        frame1: 'frame hidden',
+        frame2: 'frame'
+      };
+    } else {
+      frames = {
+        frame1: 'frame',
+        frame2: 'frame hidden'
+      }
+    }
+    setTimeout(() => {
+      updateFrames(frames);  
+    }, 1000)
+  }
+
   const writeData = (post) => {
     const fbpost = {
       name: post.name,
@@ -168,13 +188,14 @@ function App() {
               </section>
               <FormMessage writeData={writeData} offices={offices} />
             </section>
-            <Treasure/>
-            <Wizard frame="1" />
+            <Treasure selectFrame={selectFrame} />
+            <Wizard />
+            <Floor />
           </div>
         </div>
       </div>
       <div className={frames.frame2}>
-        <Messages messages={messages} />
+        <Messages messages={messages} selectFrame={selectFrame} />
       </div>
     </div>
   );

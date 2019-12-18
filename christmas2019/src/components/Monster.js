@@ -1,22 +1,22 @@
 import React from 'react';
 
-const Wizard = () => {
+const Monster = () => {
 
   const showMessage = (e) => {
     e.preventDefault();
-    document.querySelector('#dialog-rounded').showModal();
+    document.querySelector('#dialog-rounded2').showModal();
   }
 
   return (
-    <div className="layer layer10">
-      <div className="wizard">
+    <div>
+      <div className="monster">
         <img src={process.env.PUBLIC_URL + '/images/developer.png'} onClick={showMessage} />
       </div>
       <section className="wizard-dialog">
-        <dialog className="nes-dialog is-rounded" id="dialog-rounded">
+        <dialog className="nes-dialog is-rounded" id="dialog-rounded2">
           <form method="dialog">
             <p className="title">Hi Huger!</p>
-            <p>Choose wisely if you want to get the treasure!</p>
+            <p>Select one of these notes to see a great message!</p>
             <menu className="dialog-menu">
               <button className="nes-btn is-primary">Confirm</button>
             </menu>
@@ -27,6 +27,6 @@ const Wizard = () => {
   );
 } 
  
-export default Wizard;
+export default Monster;
 
 
