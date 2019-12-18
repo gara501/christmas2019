@@ -8,7 +8,7 @@ const Messages = ({messages, selectFrame}) =>  {
     const parent = document.querySelector('.paralax-bg');
     parent.classList.remove('selected');
     parent.classList.add('selected');
-    selectFrame('frame1')
+    selectFrame('frame1');
   }
 
   return (

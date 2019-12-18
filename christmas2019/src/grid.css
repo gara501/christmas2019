@@ -211,6 +211,5 @@
 }
 
 .paralax-bg.selected {
-  animation: 1s circle;
-  z-index: 100;
+  animation: 1.25s circle;
 }
