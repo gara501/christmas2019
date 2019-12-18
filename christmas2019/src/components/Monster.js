@@ -12,7 +12,7 @@ const Monster = ({total}) => {
       <div className="monster">
         <img src={process.env.PUBLIC_URL + '/images/developer.png'} onClick={showMessage} />
       </div>
-      <div className="counter-wrapper2">
+      <div className="counter-wrapper">
         <div className="counter">
           <a href="#" className="nes-badge is-splited">
             <span className="is-dark">Total:</span>
@@ -24,7 +24,7 @@ const Monster = ({total}) => {
         <dialog className="nes-dialog is-rounded" id="dialog-rounded2">
           <form method="dialog">
             <p className="title">Hi Huger!</p>
-            <p>Select one of these notes to see a great message!</p>
+            <p>Messages sent are in this list, be free so read them, just click on the notes!</p>
             <menu className="dialog-menu">
               <button className="nes-btn is-primary">Confirm</button>
             </menu>

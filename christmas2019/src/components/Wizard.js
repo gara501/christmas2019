@@ -8,7 +8,7 @@ const Wizard = ({total}) => {
   }
 
   return (
-    <div className="layer layer10">
+    <div className="">
       <div className="wizard">
         <img src={process.env.PUBLIC_URL + '/images/developer.png'} onClick={showMessage} />
       </div>

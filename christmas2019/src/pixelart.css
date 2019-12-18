@@ -4,6 +4,13 @@
   width: 80%;
 }
 
+.wizard {
+  position: absolute;
+  right: 5%;
+  bottom: 6%;
+  z-index: 20;
+}
+
 .wizard img {
   height: 120px; 
   transform: rotateY(180deg);
@@ -33,20 +40,22 @@
 
 .treasures {
   display: flex;
+  position: absolute;
+  left: 5%;
+  bottom: 7%;
   z-index: 21;
 }
 
 .treasures img {
   display: flex;
-  margin-left: 20px;
+  margin-left: 50px;
   transition: all 200ms linear;
   transform-origin: center;
+  transform: scale(2);
 }
 
 .treasures img:hover {
-  display: flex;
-  margin-left: 20px;
-  transform: scale(1.2);
+  transform: scale(2.1);
 }
 
 .invalid {
@@ -70,8 +79,9 @@
 
 .monster {
   position: absolute;
-  top: 77%;
   right: 5%;
+  bottom: 6%;
+  z-index: 20;
 }
 
 .monster img {
@@ -108,7 +118,6 @@
   top: 95%;
   height: 38px;
   justify-content: flex-start;
-  overflow: hidden;
 }
 
 .floor-block {
@@ -122,15 +131,8 @@
 
 .counter-wrapper {
   position: absolute;
-  top: 0;
-  left: 100px;
-  width: 200px;
-}
-
-.counter-wrapper2 {
-  position: absolute;
-  bottom: 160px;
-  right: -70px;
+  bottom: 0;
+  right: 0;
   width: 200px;
 }
 
@@ -138,4 +140,14 @@
   position: relative;
   display: flex;
   flex-flow: row wrap;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) { 
+  p {
+    font-size: 1rem;
+  } 
 }

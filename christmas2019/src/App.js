@@ -183,9 +183,9 @@ function App() {
             <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
             <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
             <section className="message-list layer layer8">
-              <section className="message -left">          
+              <section className="message -center">          
                 <div className="nes-container is-rounded nes-bg-white">
-                  <p>Hi Huger!, share your wishes for the next year.</p>
+                  <p>Welcome, you can interact with the environment to see what to do.</p>
                 </div>
               </section>
               <FormMessage writeData={writeData} offices={offices} />

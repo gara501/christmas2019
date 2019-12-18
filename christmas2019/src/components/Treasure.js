@@ -42,7 +42,7 @@ const Treasure = ({selectFrame}) => {
   }
 
   return (
-    <div className="treasures layer layer9">
+    <div className="treasures">
       <img id="t1" className={invalid.t1} onClick={selectTreasure} src={process.env.PUBLIC_URL + '/images/treasure.png'} />
       <img id="t2" className={invalid.t2} onClick={selectTreasure} src={process.env.PUBLIC_URL + '/images/treasure.png'} />
       <img id="t3" className={invalid.t3} onClick={selectTreasure} src={process.env.PUBLIC_URL + '/images/treasure.png'} />
