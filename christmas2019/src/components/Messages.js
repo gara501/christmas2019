@@ -17,8 +17,9 @@ const Messages = ({messages}) =>  {
       </div>
       <div className="messages-grid layer layer8">
         {messages.map((message) => (
-          <i key={message.purpose} className="nes-icon is-large star"></i>
-        
+          <div className="gem-container">
+            <div key={message.purpose} className="gem"></div>
+          </div>
         ))}
       </div>
       <Wizard frame="2" />

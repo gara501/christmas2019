@@ -8,9 +8,9 @@ const Wizard = ({frame}) => {
   }
 
   return (
-    <div className="wizard layer layer10">
-      <div className="wizard-man">
-        <img src={process.env.PUBLIC_URL + '/images/w1.png'}  onClick={showMessage} />
+    <div className="layer layer10">
+      <div className="wizard">
+        <img src={process.env.PUBLIC_URL + '/images/wizard.png'} onClick={showMessage} />
       </div>
       <section className="wizard-dialog">
         <dialog className="nes-dialog is-rounded" id="dialog-rounded">

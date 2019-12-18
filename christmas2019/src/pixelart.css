@@ -9,17 +9,27 @@
   width: 80%;
 }
 
-.wizard-man img {
-  animation: wizard 2s ease-in normal backwards infinite;
-  transform: rotateY(180deg);
-  height: 108px;
-  width: 112px;
+.wizard img {
+  height: 120px; 
+  animation: wizard 2s linear normal backwards infinite;
 }
 
 @keyframes wizard {
-  0% { transform: translateY(-10px) rotateY(180deg)}
-  50% { transform: translateY(0) rotateY(180deg)}
-  100% { transform: translateY(-10px) rotateY(180deg)}
+  0% { 
+    transform: translateY(10px);
+  }
+  25% {
+    transform: translateY(10px); 
+  }
+  50% { 
+    transform: translateY(0);
+  }
+  75% { 
+    transform: translateY(-10);
+  }
+  100% { 
+    transform: translateY(10px);
+  }
 }
 
 .treasures {
@@ -48,4 +58,36 @@
   0% { transform: rotateZ(10deg)}
   50% { transform: rotateZ(-10deg)}
   100% {transform: rotateZ(10deg)}
+}
+
+.messages-grid {
+  display: flex;
+  flex-flow: row wrap;
+  height: 50%;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gem-container {
+  position: relative;
+  margin: 0 10px;
+  height: 16px;
+  width: 16px;
+}
+
+.gem {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url('./MonedaD.png');
+  transform: scale(2)  translate(-50%, -50%);
+  animation: play 1s steps(5) infinite;
+}
+
+@keyframes play {
+  from { background-position:    0px; }
+    to { background-position: -80px; }
 }

@@ -10,6 +10,12 @@ import Messages from './components/Messages';
 
 function App() {
   const [messages, updateMessages] = useState([]);
+  
+  const [frames, updateFrames] = useState({
+    frame1: 'frame',
+    frame2: 'frame hidden'
+  });
+
   const [appState, updateAppSate] = useState([]);
   const [offices, updateOffices] = useState([
     {
@@ -143,7 +149,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="frame hidden">
+      <div className={frames.frame1}>
         <div className="container">
           <div className="paralax-bg">
             <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
@@ -167,7 +173,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="frame">
+      <div className={frames.frame2}>
         <Messages messages={messages} />
       </div>
     </div>
