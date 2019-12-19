@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Monster from './Monster';
 import Floor from './Floor';
+import Bg from './Bg';
 
 const Messages = ({messages, selectFrame}) =>  {
   console.log('Mensajes', messages);
@@ -29,12 +30,7 @@ const Messages = ({messages, selectFrame}) =>  {
   return (
     <div className="messages">
       <div className="paralax-bg">
-        <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
-        <img className="layer layer2" src={process.env.PUBLIC_URL + '/images/2.png'} />
-        <img className="layer layer3" src={process.env.PUBLIC_URL + '/images/3.png'} />
-        <img className="layer layer4" src={process.env.PUBLIC_URL + '/images/4.png'} />
-        <img className="layer layer5" src={process.env.PUBLIC_URL + '/images/5.png'} />
-        <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
+        <Bg />
         <h3 className="layer layer7 extruded-text">WISHES</h3>
       </div>
       <section className="message-dialog">

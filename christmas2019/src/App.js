@@ -7,6 +7,7 @@ import Treasure from './components/Treasure';
 import Wizard from './components/Wizard';
 import Messages from './components/Messages';
 import Floor from './components/Floor';
+import Bg from './components/Bg';
 
 
 function App() {
@@ -175,12 +176,7 @@ function App() {
       <div className={frames.frame1}>
         <div className="container">
           <div className="paralax-bg">
-            <img className="layer layer1" src={process.env.PUBLIC_URL + '/images/1.png'} />
-            <img className="layer layer2" src={process.env.PUBLIC_URL + '/images/2.png'} />
-            <img className="layer layer3" src={process.env.PUBLIC_URL + '/images/3.png'} />
-            <img className="layer layer4" src={process.env.PUBLIC_URL + '/images/4.png'} />
-            <img className="layer layer5" src={process.env.PUBLIC_URL + '/images/5.png'} />
-            <img className="layer layer6" src={process.env.PUBLIC_URL + '/images/6.png'} />
+            <Bg />
             <h3 className="layer layer7 extruded-text">HUGE WISHES</h3>
             <section className="message-list layer layer8">
               <section className="message -center">          

@@ -22,6 +22,15 @@ const Floor = () => {
       <div className="floor-block"></div>
       <div className="floor-block"></div>
       <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
+      <div className="floor-block"></div>
     </div>
   );
 } 

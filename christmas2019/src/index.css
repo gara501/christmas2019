@@ -326,9 +326,26 @@ h1,h2,h3,h4,h5,h6, p {
   transform: scale(1) translate3d(-50%, -100%,0) rotateY(0);
 }
 
+@media only screen and (max-width: 600px) { 
+  .form-container.form-open {
+    transform: scale(1) translate3d(-60%, -110%,0) rotateY(0);
+    width: 100%;
+  } 
+}
+
 .form-init {
   text-align: center;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) { 
+  .form-init {
+    text-align: left;
+  }
+}
+
+.form-init .nes-btn.is-primary {
+  width: 85%;
 }
 
 .form-init a {

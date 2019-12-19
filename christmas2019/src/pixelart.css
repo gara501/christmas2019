@@ -77,6 +77,12 @@
   transform: translateX(-50%);
 }
 
+@media only screen and (max-width: 600px) { 
+  .messages-grid {
+    width: 95%;    
+  } 
+}
+
 .monster {
   position: absolute;
   right: 5%;
@@ -149,5 +155,9 @@ p {
 @media only screen and (max-width: 600px) { 
   p {
     font-size: 1rem;
-  } 
+  }
+
+  .counter-wrapper {
+    bottom: -5px;    
+  }
 }
